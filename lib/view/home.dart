@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mvc/controllers/controller.dart';
 import 'package:mvc/controllers/sharePreferencesController.dart';
+import 'package:mvc/view/riverpod_page.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -35,14 +36,26 @@ class HomeState extends State<Home> {
               },
               child: Text("MVC"),
             ),
-            TextButton(onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => SharePreferencesController(),
-                ),
-              );
-            }, child: Text("SharePreferences")),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SharePreferencesController(),
+                  ),
+                );
+              },
+              child: Text("SharePreferences"),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => RiverpodPage()),
+                );
+              },
+              child: Text("Riverpod"),
+            ),
           ],
         ),
       ),
